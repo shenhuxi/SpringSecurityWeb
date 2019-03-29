@@ -15,19 +15,21 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-                .authorizeRequests()
+        http.authorizeRequests()
                 .antMatchers("/hello.html")
                 .permitAll()//注意这里hello.html需要配置成不需要身份认证，否则会报重定向次数过多
-                .anyRequest()
-                .authenticated()
+
                 .and()
                 .formLogin()
                 .loginPage("/hello.html")//指定我们自己的登录页面
                 .loginProcessingUrl("/admin/login")//指定让UsernamePasswordAuthenticationFilter拦截器拦截的路径
                 .defaultSuccessUrl("/index")//默认登录成功后跳转的页面
                 .and()
-                .csrf().disable();
+                .authorizeRequests()
+                .anyRequest()
+                .authenticated();
+        http.csrf().disable();
+        http.headers().frameOptions().sameOrigin();
 
        /* http.authorizeRequests()
                 .antMatchers("/hello.html")
