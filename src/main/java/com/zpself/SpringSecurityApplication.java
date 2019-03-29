@@ -1,4 +1,4 @@
-package src.main.java.com.zpself;
+package com.zpself;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

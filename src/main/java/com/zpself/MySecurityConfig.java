@@ -1,4 +1,4 @@
-package src.main.java.com.zpself;
+package com.zpself;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
