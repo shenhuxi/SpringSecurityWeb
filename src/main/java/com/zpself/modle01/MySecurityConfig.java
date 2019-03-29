@@ -10,7 +10,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 /**
  * Created by zengpeng on 2019/3/28
  */
-@Configuration
+//@Configuration
 public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
