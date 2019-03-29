@@ -1,4 +1,4 @@
-package com.zpself.modle02;
+package com.zpself.module02;
 
 
 import org.slf4j.Logger;
@@ -50,6 +50,6 @@ public class PermissionService {
 				}
 			}
 		}
-		return hasPermission;
+		return true;
 	}
 }
