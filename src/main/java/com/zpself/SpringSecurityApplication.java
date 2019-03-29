@@ -14,8 +14,8 @@ public class SpringSecurityApplication {
     public static void main(String[] args) {
         SpringApplication.run(SpringSecurityApplication.class, args);
     }
-    @GetMapping("/hello")
+   /* @GetMapping("/hello")
     public String hello(){
-        return "hello";
-    }
+        return "hello萨达萨达撒  ";
+    }*/
 }
