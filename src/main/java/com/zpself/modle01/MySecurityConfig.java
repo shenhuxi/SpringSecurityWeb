@@ -18,12 +18,14 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/hello.html")
                 .permitAll()//注意这里hello.html需要配置成不需要身份认证，否则会报重定向次数过多
+                .antMatchers("/success.html")
+                .permitAll()//注意这里hello.html需要配置成不需要身份认证，否则会报重定向次数过多
 
                 .and()
                 .formLogin()
                 .loginPage("/hello.html")//指定我们自己的登录页面
                 .loginProcessingUrl("/admin/login")//指定让UsernamePasswordAuthenticationFilter拦截器拦截的路径
-                .defaultSuccessUrl("/index")//默认登录成功后跳转的页面
+                .defaultSuccessUrl("/success.html")//默认登录成功后跳转的页面
                 .and()
                 .authorizeRequests()
                 .anyRequest()
